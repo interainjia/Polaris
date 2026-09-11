@@ -29,7 +29,7 @@ services:
       context: ..
       dockerfile: docker/Dockerfile.frontend
       target: build                 # node stage only
-    command: pnpm run dev -- --host 0.0.0.0
+    command: pnpm exec vite --host 0.0.0.0
     environment:
       VITE_PROXY_TARGET: http://api:8000
     volumes:
