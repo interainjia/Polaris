@@ -13,3 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `src/frontend/src/assets/cblogo.svg`).
 - Replaced the browser tab favicon with `src/frontend/src/assets/favicon.svg`
   and updated the page title to "Crownbio · 自动 AI 科研平台".
+- Renamed the "PolarisBuddy" assistant to "CrownbioBuddy" across UI text,
+  tooltips, and internal comments, and swapped its icon (empty state, panel
+  header, sidebar toggle, turn status) from the Polaris mark to
+  `src/frontend/src/assets/favicon.svg` via a new `BuddyIcon` component that
+  preserves the busy/idle status dot.

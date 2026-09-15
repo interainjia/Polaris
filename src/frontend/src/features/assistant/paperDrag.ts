@@ -1,5 +1,5 @@
 /* ============================================================
-   把论文拖给 PolarisBuddy。
+   把论文拖给 CrownbioBuddy。
 
    自定义 MIME `application/x-polaris-paper` 而不是 text/plain：悬浮球只接平台自己
    拖出来的论文，从别处拖进来的文字/文件不会误触发解读。同时也放一份 text/plain，

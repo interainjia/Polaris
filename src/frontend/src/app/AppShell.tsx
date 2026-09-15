@@ -2,7 +2,7 @@ import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate, useOutletContext } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Icon, type IconName } from '../components/ui/Icon';
-import { PolarisMark } from '../components/ui/PolarisLogo';
+import { BuddyIcon } from '../components/ui/BuddyIcon';
 import brandLogoUrl from '../assets/favicon.svg';
 import brandWordmarkUrl from '../assets/cblogo.svg';
 import { Drawer } from '../components/ui/Drawer';
@@ -549,7 +549,7 @@ export function AppShell() {
         e.preventDefault();
         setSearchOpen((o) => !o);
       }
-      // ⌘J：PolarisBuddy。挑 J 是因为 ⌘K 已被搜索占了，而两者都该是全局的
+      // ⌘J：CrownbioBuddy。挑 J 是因为 ⌘K 已被搜索占了，而两者都该是全局的
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'j') {
         e.preventDefault();
         setAssistantOpen((o) => !o);
@@ -860,13 +860,13 @@ export function AppShell() {
               <Icon name="search" size={16} />
             </button>
           )}
-          {/* PolarisBuddy：入口在顶栏右侧，不再是浮在页面上的球——球会挡住内容，
+          {/* CrownbioBuddy：入口在顶栏右侧，不再是浮在页面上的球——球会挡住内容，
               而且没人知道它是什么。这里也是论文/选中文字的拖放落点。 */}
           <button
             className="icon-btn"
             onClick={() => setAssistantOpen((o) => !o)}
-            title={tr('PolarisBuddy（⌘J）· 可把论文或选中的文字拖到这里', 'PolarisBuddy (⌘J) · drop a paper or selection here')}
-            aria-label="PolarisBuddy"
+            title={tr('CrownbioBuddy（⌘J）· 可把论文或选中的文字拖到这里', 'CrownbioBuddy (⌘J) · drop a paper or selection here')}
+            aria-label="CrownbioBuddy"
             onDragOver={(e) => {
               const types = e.dataTransfer.types;
               if (types.includes(PAPER_DND_MIME) || types.includes('text/plain')) {
@@ -897,7 +897,7 @@ export function AppShell() {
               outline: buddyDragOver ? '1px dashed var(--accent)' : undefined,
             }}
           >
-            <PolarisMark size={16} dot={!buddyBusy} />
+            <BuddyIcon size={16} dot={!buddyBusy} />
             {/* 主动提示：顶栏按钮上一个小点；点开面板即消。没有真事时根本不出现 */}
             {nudge && (
               <span
@@ -1003,7 +1003,7 @@ export function AppShell() {
         </div>
       </div>
 
-      {/* —— PolarisBuddy 停靠栏：它是版面的一列，内容区被挤窄而不是被盖住 ——
+      {/* —— CrownbioBuddy 停靠栏：它是版面的一列，内容区被挤窄而不是被盖住 ——
           浮层盖住内容，「一边看论文一边问」就只能开一下关一下；停靠栏让两边同时在场。
           窄屏不走这条（挤两列谁都看不清），下面那个覆盖式抽屉才是手机形态。 */}
       {!isMobile && dockFits && assistantOpen && (

@@ -130,7 +130,7 @@ function DailyRow({
   return (
     <div
       onClick={onClick}
-      // 可以直接拖给 PolarisBuddy 解读（右下角悬浮球是落点）
+      // 可以直接拖给 CrownbioBuddy 解读（右下角悬浮球是落点）
       {...paperDragProps(p.paper_id, p.title)}
       style={{
         padding: '11px 14px 11px 16px',

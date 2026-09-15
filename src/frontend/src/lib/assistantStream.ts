@@ -47,7 +47,7 @@ export type AssistantBlock =
 export interface AssistantHandlers {
   /** 首帧带来的这轮模型名——界面上要显示「这轮用的是谁」 */
   onMeta?: (meta: { model: string; tools: string[] }) => void;
-  /** 用户此刻在看的页面（PolarisBuddy 的页面感知）；不传就不带 */
+  /** 用户此刻在看的页面（CrownbioBuddy 的页面感知）；不传就不带 */
   page?: { kind: string; id?: string };
   /** 这场对话属于哪个课题（= 平台的 project）。默认不绑，用户勾选才收窄。 */
   projectId?: string | null;
@@ -74,7 +74,7 @@ const num = (v: unknown): number | undefined => (typeof v === 'number' ? v : und
 
 /** 跑一轮助手对话；返回中止函数。
  *
- * 不带课题作用域：PolarisBuddy 是全局助手，检索范围是「这个人看得见的全部文献库」，
+ * 不带课题作用域：CrownbioBuddy 是全局助手，检索范围是「这个人看得见的全部文献库」，
  * 由后端按可见性算。以前这里要传 projectId，多课题不传就 409——那是在让用户替一个
  * 纯内部的数据结构做选择题。
  */

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { PolarisMark } from '../../components/ui/PolarisLogo';
+import { BuddyIcon } from '../../components/ui/BuddyIcon';
 import type { AssistantBlock } from '../../lib/assistantStream';
 import { tr } from '../../lib/i18n';
 
@@ -93,7 +93,7 @@ export function TurnStatus({
     >
       {/* 用标识本身表示「在忙」：转圈是通用的忙，标识差着一点则是「这件事还没做完」 */}
       <span style={{ display: 'inline-flex', animation: 'buddy-breathe 1.6s ease-in-out infinite' }}>
-        <PolarisMark size={13} dot={false} />
+        <BuddyIcon size={13} dot={false} />
       </span>
       <span
         style={{ flex: '0 1 auto', minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}

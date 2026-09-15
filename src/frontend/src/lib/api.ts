@@ -5641,7 +5641,7 @@ export const api = {
   }> {
     return request('/chat/capabilities');
   },
-  /** PolarisBuddy 开面板时的问候语。数字是 SQL 数出来的，不过模型。 */
+  /** CrownbioBuddy 开面板时的问候语。数字是 SQL 数出来的，不过模型。 */
   getBuddyGreeting(page?: string | null): Promise<{
     greeting: string;
     /** 开场的一句主动问话；按「用户此刻在看什么」挑 */

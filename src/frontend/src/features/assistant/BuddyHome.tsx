@@ -1,10 +1,10 @@
 import { Icon, type IconName } from '../../components/ui/Icon';
-import { PolarisMark } from '../../components/ui/PolarisLogo';
+import { BuddyIcon } from '../../components/ui/BuddyIcon';
 import { tr } from '../../lib/i18n';
 import { greetingFor } from './greeting';
 
 /* ============================================================
-   PolarisBuddy 的空态。
+   CrownbioBuddy 的空态。
 
    照 Codex 那套排：大片留白、居中一个很淡的标识、一句招呼，下面是这次开场的问句
    和三条点一下就发出去的话。
@@ -72,7 +72,7 @@ export function BuddyHome({
     >
       {/* 标识压得很淡：空屏需要一个落点，但它不该比招呼更响 */}
       <div style={{ opacity: 0.16 }}>
-        <PolarisMark size={54} dot={false} />
+        <BuddyIcon size={54} dot={false} />
       </div>
 
       <div style={{ textAlign: 'center', maxWidth: 400 }}>

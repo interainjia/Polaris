@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { Icon } from '../../components/ui/Icon';
 import { SpeechPlayer } from '../../components/ui/SpeechPlayer';
-import { PolarisMark } from '../../components/ui/PolarisLogo';
+import { BuddyIcon } from '../../components/ui/BuddyIcon';
 import { Markdown } from '../../lib/markdown';
 import { api } from '../../lib/api';
 import {
@@ -25,7 +25,7 @@ import { useProject } from '../../app/project';
 import { TurnStatus } from './TurnStatus';
 
 /* ============================================================
-   PolarisBuddy：全局抽屉。⌘J 开关，或点右下角的悬浮球。
+   CrownbioBuddy：全局抽屉。⌘J 开关，或点右下角的悬浮球。
 
    与现有六个对话入口并存——它们一行没改。Buddy 能跨课题/库/论文调用平台工具，
    界面上多出来的就是「工具卡片」：正在调什么、调完拿到了什么。
@@ -212,7 +212,7 @@ export function BuddyMark({ busy, size = 16 }: { busy: boolean; size?: number })
         animation: busy ? 'buddy-breathe 1.6s ease-in-out infinite' : undefined,
       }}
     >
-      <PolarisMark size={size} dot={!busy} />
+      <BuddyIcon size={size} dot={!busy} />
     </span>
   );
 }
@@ -933,9 +933,9 @@ export function AssistantPanel({
             {busy && <span className="buddy-live-dot" />}
             <strong
               style={{ fontSize: 13.5, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
-              title={title || 'PolarisBuddy'}
+              title={title || 'CrownbioBuddy'}
             >
-              {title || 'PolarisBuddy'}
+              {title || 'CrownbioBuddy'}
             </strong>
           </div>
           {model && (

@@ -45,7 +45,7 @@ import { CAPABILITY_PLUGINS_MANAGE, hasHost, isCapabilityAvailable, loadCapabili
 import { AdminSpeechSettings, PersonalSpeechSettings } from './SpeechSettings';
 
 /* ============================================================
-   /settings — 个人设置：个人信息 / 界面偏好 / PolarisBuddy / 语音 /
+   /settings — 个人设置：个人信息 / 界面偏好 / CrownbioBuddy / 语音 /
    群机器人 / SSH 凭据 / 用量 / 扩展 / MCP 接入。
    管理那组（LLM 管理、每日论文、用量总览）搬到了 /admin
    （AdminSettingsPage），但标签页组件仍住在本文件里 export 出去复用。
@@ -2790,7 +2790,7 @@ export function SettingsPage() {
   const items: { v: Tab; label: string }[] = [
     { v: 'personal', label: tr('个人信息', 'Profile') },
     { v: 'prefs', label: tr('界面偏好', 'Interface') },
-    { v: 'buddy', label: 'PolarisBuddy' },
+    { v: 'buddy', label: 'CrownbioBuddy' },
     { v: 'speech', label: tr('语音听读', 'Speech') },
     { v: 'bots', label: tr('群机器人', 'Group bots') },
     { v: 'ssh', label: tr('SSH 凭据', 'SSH credentials') },
