@@ -2,7 +2,9 @@ import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate, useOutletContext } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Icon, type IconName } from '../components/ui/Icon';
-import { PolarisMark, PolarisWordmark } from '../components/ui/PolarisLogo';
+import { PolarisMark } from '../components/ui/PolarisLogo';
+import brandLogoUrl from '../assets/favicon.svg';
+import brandWordmarkUrl from '../assets/cblogo.svg';
 import { Drawer } from '../components/ui/Drawer';
 import { GateCard, gateTitle } from '../components/ui/GateCard';
 import { ToastHost, toast } from '../components/ui/Toast';
@@ -750,10 +752,12 @@ export function AppShell() {
       {/* —— 侧栏（手机上是覆盖式抽屉，见 global.css 响应式一节）—— */}
       <div className="sidebar">
         <div className="sb-brand">
-          <PolarisMark size={41} />
+          <img src={brandLogoUrl} alt="" style={{ height: 41, width: 'auto', display: 'block', flexShrink: 0 }} />
           {/* 收起后只留左侧图形标：直接不渲染字标，杜绝溢出（不靠 CSS 隐藏）。
               手机抽屉是完整宽度，字标照常显示。 */}
-          {(!navCollapsed || isMobile) && <PolarisWordmark height={30} />}
+          {(!navCollapsed || isMobile) && (
+            <img src={brandWordmarkUrl} alt="Crown Bioscience" style={{ height: 44, width: 'auto', display: 'block', flexShrink: 0 }} />
+          )}
         </div>
         {/* —— 文献 + 课题研究两组（平面分组，只靠 eyebrow + 间距区分，不加分隔线）。
             放在滚动区之外：课题切换器的下拉菜单要能向右溢出到主列上 —— */}
